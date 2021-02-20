@@ -241,7 +241,7 @@ Op :: enum i32 {
     SpecConstantFalse = 49,
     SpecConstant = 50,
     SpecConstantComposite = 51,
-    SpecConstant = 52,
+    SpecConstant2 = 52,
     Function = 54,
     FunctionParameter = 55,
     FunctionEnd = 56,
@@ -761,17 +761,6 @@ Op :: enum i32 {
     Max = 0x7fffffff,
 }
 
-Dim :: enum i32 {
-    1D = 0,
-    2D = 1,
-    3D = 2,
-    Cube = 3,
-    Rect = 4,
-    Buffer = 5,
-    SubpassData = 6,
-    Max = 0x7fffffff,
-}
-
 ImageFormat :: enum i32 {
     Unknown = 0,
     Rgba32f = 1,
@@ -817,6 +806,18 @@ ImageFormat :: enum i32 {
     R64i = 41,
     Max = 0x7fffffff,
 }
+
+Dim :: enum i32 {
+    One = 0,
+    Two = 1,
+    Three = 2,
+    Cube = 3,
+    Rect = 4,
+    Buffer = 5,
+    SubpassData = 6,
+    Max = 0x7fffffff,
+}
+
 
 TypeFlags :: u32;
 DecorationFlags :: u32;
@@ -1411,6 +1412,6 @@ foreign spirv_reflect {
     ) -> Result ---;
 
     @(link_name="spvReflectSourceLanguage")
-    SourceLanguage :: proc(source_lang : SourceLanguage) -> cstring ---;
+    GetSourceLanguage :: proc(source_lang : SourceLanguage) -> cstring ---;
 
 }
