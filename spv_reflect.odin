@@ -1,4 +1,4 @@
-package spv
+package spv_reflect
 
 foreign import "spirv_reflect.lib"
 
