@@ -1,6 +1,6 @@
 package spv_reflect
 
-foreign import "spirv_reflect.lib"
+foreign import "lib/spirv_reflect.lib"
 
 import _c "core:c"
 
@@ -991,7 +991,7 @@ Matrix :: struct {
 NumericTraits :: struct {
     scalar : Scalar,
     vector : Vector,
-    matrix : Matrix,
+    matrix_ : Matrix,
 };
 
 ImageTraits :: struct {
