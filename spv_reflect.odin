@@ -1,8 +1,11 @@
 package spv_reflect
 
-foreign import "lib/spirv_reflect.lib"
-
 import _c "core:c"
+
+when ODIN_OS == .Windows {
+    foreign import "lib/spirv_reflect.lib"
+}
+
 
 SourceLanguage :: enum i32 {
     Unknown = 0,
